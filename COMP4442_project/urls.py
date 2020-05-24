@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index', views.index, name='index' ),
     path('form' , views.form, name = 'form'),
+    path('records', views.records, name = 'records'),
+    path('publishhandler', views.publishhandler, name='publishhandler'),
 ]

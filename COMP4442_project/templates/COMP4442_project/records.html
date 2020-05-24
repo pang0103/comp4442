@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>COVID-19 Show Records</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<table class = 'table'>
+<thead>
+<tr>
+<th>Record ID</th> <th>ID</th>
+<th>Name</th> <th>Email</th><th>Location</th>
+</tr>
+</thead>
+<tbody>
+{% for record in records %}
+<tr>
+<td>{{ record.recordID }}</td>
+<td>{{ record.ID }}</td>
+<td>{{ record.name }} </td>
+<td>{{ record.email }}</td>
+<td>{{ record.Location }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>
