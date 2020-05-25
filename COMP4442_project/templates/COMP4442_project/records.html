@@ -8,10 +8,11 @@
 </head>
 <body>
 <table class = 'table'>
-<thead>
+<thead class= 'thread-dark'>
 <tr>
 <th>Record ID</th> <th>ID</th>
 <th>Name</th> <th>Email</th><th>Location</th>
+<th>From</th> <th>Tempreture</th><th>Health Status</th>
 </tr>
 </thead>
 <tbody>
@@ -22,6 +23,9 @@
 <td>{{ record.name }} </td>
 <td>{{ record.email }}</td>
 <td>{{ record.Location }}</td>
+<td>{{ record.FromCountry }}</td>
+<td>{{ record.BodyTemp }}</td>
+<td>{{ record.HealthStatus }}</td>
 </tr>
 {% endfor %}
 </tbody>

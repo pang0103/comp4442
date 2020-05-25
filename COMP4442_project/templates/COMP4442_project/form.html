@@ -10,7 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1><center>COVID-19 Information Collection</center></h1>
+<h2><center>COVID-19 Information Collection</center></h2>
     <form class = "col-md-4 col-md-offset-4 container" action = "publishhandler" method = "POST">
         {% csrf_token %}
         <div class="form-group">
@@ -26,8 +26,20 @@
           <input type="email" class="form-control" name="S_EMAIL" id="S_EMAIL" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
-            <label for="S_LOCATION">Location</label>
+            <label for="S_LOCATION">Current Location</label>
             <input type="text" class="form-control" name="S_LOCATION" id="S_LOCATION" placeholder="Enter your location">
+          </div>
+          <div class="form-group">
+            <label for="S_From_country">Where you from</label>
+            <input type="text" class="form-control" name="S_From_country" id="S_From_country" placeholder="Where you from?">
+          </div>
+          <div class="form-group">
+            <label for="S_Body_temp">Body Tempreture</label>
+            <input type="text" class="form-control" name="S_Body_temp" id="S_Body_temp" placeholder="Enter your body tempreture">
+          </div>
+          <div class="form-group">
+            <label for="S_Health_status">Health Status</label>
+            <input type="text" class="form-control" name="S_Health_status" id="S_Health_status" placeholder="How do you feel?">
           </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
