@@ -24,6 +24,7 @@ def non_return_db_operation(request):
     mydb.commit()
 
 def publishhandler(request):
+    invoke = requests.get(httpAPI)
     ID = request.POST["S_ID"]
     location = request.POST['S_LOCATION']
     name = request.POST['S_NAME']
@@ -33,7 +34,6 @@ def publishhandler(request):
     hstatus = request.POST['S_Health_status']
     request = "insert into record values(null, '" + ID + "', '" + name + "','" + email + "', '" + location + "', '" + from_country  + "', '" + temp  + "', '" + hstatus + "')"
     non_return_db_operation(request)
-    #invoke = requests.get(httpAPI)
     return HttpResponseRedirect('/records')
 
 def all_return_db_operation(request):
@@ -59,6 +59,21 @@ def records(request):
     context = {'records':records}
     return render(request, 'COMP4442_project/records.html', context)
 
+def summary(request):
+    trecords = all_return_db_operation('select * from summary')
+    summarys = []
+    for tr in trecords:
+        summarys.append({"summaryID": tr[0],
+           "NoChina": tr[1],
+           "NoUS": tr[2],
+           "NoHK": tr[3],
+           "NoEU":tr[4],
+           "NoOthers" : tr[5],
+           "NoSuspected": tr[6],
+           "NoConfired" : tr[7],
+    })
+    context = {'summarys':summarys}
+    return render(request, 'COMP4442_project/summary.html', context)
 
 def index(request):
     return HttpResponse("Hello World")

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>COVID-19 Summary</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Summary:</h2>
+<table class = 'table'>
+<thead class= 'thread-dark'>
+<tr>
+<th>Summary Number</th> <th>Students from China</th>
+<th>Students from America</th> <th>Number of Local Student</th><th>Students from Europe</th>
+<th>Students from other regions</th> <th>Suspect case(tempreture>37.2):</th><th>Confirmed cases</th>
+</tr>
+</thead>
+<tbody>
+{% for sum in summarys %}
+<tr>
+<td>{{ sum.summaryID }}</td>
+<td>{{ sum.NoChina }}</td>
+<td>{{ sum.NoUS }} </td>
+<td>{{ sum.NoHK }}</td>
+<td>{{ sum.NoEU }}</td>
+<td>{{ sum.NoOthers }}</td>
+<td>{{ sum.NoSuspected }}</td>
+<td>{{ sum.NoConfired }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>

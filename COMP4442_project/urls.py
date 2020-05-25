@@ -22,5 +22,6 @@ urlpatterns = [
     path('index', views.index, name='index' ),
     path('form' , views.form, name = 'form'),
     path('records', views.records, name = 'records'),
+    path('summary', views.summary, name ='summary'),
     path('publishhandler', views.publishhandler, name='publishhandler'),
 ]
