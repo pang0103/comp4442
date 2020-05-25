@@ -18,6 +18,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('' , views.form, name = 'form'),
     path('admin/', admin.site.urls),
     path('index', views.index, name='index' ),
     path('form' , views.form, name = 'form'),
